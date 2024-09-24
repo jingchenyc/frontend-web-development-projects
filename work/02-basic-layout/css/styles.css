@@ -1,0 +1,102 @@
+/* #homepage for Grid */
+#homepage {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 20% 1fr;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Times New Roman', sans-serif;
+}
+
+/* header */
+header {
+    grid-area: header;
+    background-color: plum;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* primary-nav */
+.primary-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.primary-nav li {
+    display: inline-block;
+    margin: 0 10%;
+}
+
+.primary-nav a {
+    text-decoration: underline;
+    color: blue;
+    padding: 15px 15px;
+}
+
+.primary-nav a:hover {
+    color: white;
+    background-color: rebeccapurple;
+}
+
+/* sidebar */
+nav.local-menu {
+    grid-area: sidebar;
+    background-color: pink;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.local-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.local-menu li {
+    margin-bottom: 15px;
+}
+
+.local-menu a {
+    text-decoration: underline;
+    color: blue;
+    padding: 10px;
+    display: block;
+}
+
+.local-menu a:hover {
+    background-color: plum;
+}
+
+/* main content */
+main {
+    grid-area: main;
+    background-color: pink;
+    padding: 20px;
+    border-left: 1px solid black;
+    overflow-y: auto;
+    text-align: justify;
+}
+
+main p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* footer */
+footer {
+    grid-area: footer;
+    background-color: plum;
+    text-align: left;
+    padding: 10px;
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
