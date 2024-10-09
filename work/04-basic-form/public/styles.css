@@ -1,0 +1,91 @@
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.required {
+    color: #d9534f;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0.75rem;
+}
+
+label {
+    padding: 0.5rem 0.25rem;
+    text-align: right;
+}
+
+input[type="text"], input[type="email"], select {
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.checkbox-group {
+    grid-column: span 2;
+    align-items: center;
+}
+
+.checkbox-group label {
+    margin-left: 0.25rem;
+}
+
+button {
+    grid-column: span 2;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+/* Adaptive Styling */
+@media (max-width: 50rem) {
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    label {
+        padding: 0;
+        text-align: left;
+        grid-column: span 2;
+    }
+
+    input[type="text"], input[type="email"], select {
+        grid-column: span 2;
+        margin-bottom: 2rem;
+
+    }
+
+    .checkbox-group {
+    }
+}
