@@ -1,0 +1,366 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #d4d7d9;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+nav {
+    display: none; /* Hidden by default on small screens */
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-toggle {
+    display: none; /* Hide button by default */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Hidden checkbox */
+.nav-toggle-checkbox {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Vertical by default */
+    gap: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+}
+
+.card-area {
+    gap: 20px;
+}
+
+.cards-container > .card-area:first-child {
+    grid-column: span 12;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cards-container > .card-area:last-child {
+    grid-column: span 12;
+    grid-template-columns: repeat(4, 1fr);
+}
+.card-characteristics .card-introduction {
+    background-color: #ef5350;;
+}
+
+.card-characteristics .card-habitat {
+    background-color: #e53935;
+}
+
+.card-characteristics .card-avoidance {
+    background-color: #d32f2f;
+}
+
+.card-sightings .card-outback {
+    background-color: #e0e0e0;
+}
+
+.card-sightings .card-urban-legends {
+    background-color: #bdbdbd;
+}
+
+.card-sightings .card-famous-encounter {
+    background-color: #9e9e9e;
+}
+
+.card-sightings .card-myth-reality {
+    background-color: #757575;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #333;
+    text-decoration: underline;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+main p {
+    margin-bottom: 2rem;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.required {
+    color: red;
+    font-size: 0.9rem;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+fieldset label {
+    margin-left: 0.25rem;
+}
+
+label[for="checkbox_yes"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 1px;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 40rem) {
+    .nav-toggle {
+        display: block; /* Show the toggle button on small screens */
+    }
+
+    /* Slide-in menu */
+    nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Hidden off-screen */
+        height: 100%;
+        width: 70%;
+        background-color: #333;
+        transition: left 0.3s ease-in-out;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    /* When checkbox is checked, slide in the menu */
+    .nav-toggle-checkbox:checked + label + nav {
+        left: 0; /* Show the menu */
+    }
+
+    /* Hide top-level links (Menu, External Links) on small screens */
+    nav ul li > button {
+        display: none;
+    }
+
+    /* Ensure that submenu items are visible */
+    nav ul li ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Submenu link styling */
+    nav ul li ul li a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+    nav ul li ul li a:hover {
+        background-color: #555;
+    }
+
+    .card-area {
+        /*display: grid;*/
+    }
+}
+
+/* Dropdown styles for wider screens */
+@media (min-width: 40rem) {
+    nav {
+        display: flex;
+        flex-direction: row;
+        padding: 0 4rem;
+    }
+
+    nav ul li > button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0;
+        text-decoration: none;
+        display: inline;
+    }
+
+    nav ul li > button:hover {
+        color: #ddd;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    nav ul li {
+        position: relative;
+    }
+
+    nav ul li ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #444;
+        width: 200px;
+        z-index: 10;
+    }
+
+    nav ul li:hover ul {
+        display: block;
+    }
+
+    /* Submenu link styling */
+    nav ul li ul li a {
+        padding: 10px;
+        background-color: #444;
+        color: white;
+        display: block;
+        text-align: left;
+    }
+
+    nav ul li:hover ul,
+    nav ul li:focus-within ul {
+        display: block;
+    }
+
+    nav ul li ul li a {
+        display: block;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        background-color: #444;
+    }
+
+    nav ul li ul li a:hover {
+        background-color: #555;
+    }
+
+    .card-area {
+        display: grid;
+        gap: 20px;
+    }
+
+    .cards-container > .card-area:first-child {
+        grid-column: span 12;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cards-container > .card-area:last-child {
+        grid-column: span 12;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

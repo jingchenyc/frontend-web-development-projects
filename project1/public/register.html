@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <a href="index.html">
+    <img src="logo.jpg" alt="Drop Bear Logo" class="logo">
+  </a>
+  <!-- Hidden checkbox for toggling the menu -->
+  <input type="checkbox" id="nav-toggle-checkbox" class="nav-toggle-checkbox">
+  <label for="nav-toggle-checkbox" class="nav-toggle">&#9776;</label>
+  <nav>
+    <ul class="menu">
+      <li class="dropdown">
+        <button type="button">Menu</button>
+        <ul class="submenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <button type="button">External Links</button>
+        <ul class="submenu">
+          <li><a href="https://en.wikipedia.org/wiki/Drop_bear" target="_blank">Wikipedia</a></li>
+          <li><a href="https://australian.museum/learn/animals/mammals/drop-bear/" target="_blank">Australian Museum</a></li>
+          <li><a href="https://www.cnn.com/travel/drop-bears-legend-australia-intl-hnk/index.html" target="_blank">CNN Report</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>Register</h1>
+  <form action="/register" method="POST">
+
+    <label for="name">Name <span class="required">(Required)</span></label>
+    <input type="text" id="name" name="name" required aria-required="true" placeholder="Enter your full name">
+
+    <label for="email">Email <span class="required">(Required)</span></label>
+    <input type="email" id="email" name="email" required aria-required="true" placeholder="Enter your email address">
+
+    <fieldset>
+      <legend>Do you like Drop Bears?</legend>
+      <label for="checkbox_yes">
+        <input type="checkbox" id="checkbox_yes" name="likes_drop_bears" checked> Yes! 🐨
+      </label>
+    </fieldset>
+
+    <label for="dropdown">Favorite Animal:</label>
+    <select id="dropdown" name="favorite_animal">
+      <option value="koala">Koala</option>
+      <option value="kangaroo">Kangaroo</option>
+      <option value="wombat">Wombat</option>
+      <option value="dropbear">Drop Bear</option>
+    </select>
+
+    <button type="submit">Register</button>
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2024 Drop Bear Website</p>
+</footer>
+</body>
+</html>
