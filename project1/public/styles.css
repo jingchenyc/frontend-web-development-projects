@@ -226,6 +226,9 @@ footer {
 @media (max-width: 40rem) {
     .nav-toggle {
         display: block; /* Show the toggle button on small screens */
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
     }
 
     /* Slide-in menu */
@@ -248,6 +251,14 @@ footer {
         left: 0; /* Show the menu */
     }
 
+    .nav-toggle:focus + nav {
+        left: 0;
+    }
+
+    nav:focus-within {
+        left: 0;
+    }
+
     /* Hide top-level links (Menu, External Links) on small screens */
     nav ul li > button {
         display: none;
@@ -268,7 +279,8 @@ footer {
         text-decoration: none;
     }
 
-    nav ul li ul li a:hover {
+    nav ul li ul li a:hover,
+    nav ul li ul li a:focus {
         background-color: #555;
     }
 
