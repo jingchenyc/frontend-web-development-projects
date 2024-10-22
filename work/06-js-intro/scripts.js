@@ -1,8 +1,8 @@
 "use strict";
 
 (function() {
-    const menuButton = document.getElementById('menuButton');
-    const dropdownMenu = document.getElementById('dropdownMenu');
+    const menuButton = document.querySelector('.menu-button');
+    const dropdownMenu = document.querySelector('.dropdown-menu');;
 
     // Toggle the 'open' class when the menu button is clicked or activated by keyboard
     function toggleMenu() {
