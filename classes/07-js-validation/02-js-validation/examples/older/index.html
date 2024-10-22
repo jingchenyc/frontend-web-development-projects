@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="form.js"></script>
+</head>
+<body>
+  <form class="register" action="/register" method="POST">
+    <div class="register__email register-email">
+      <label for="email">Email</label>
+      <span class="register-email__error">
+        This field is required
+      </span>
+      <input name="email" class="register-email__input" id="email" type="email">
+    </div>
+    <div class="register__confirm register-confirm">
+      <label for="confirm">Confirm Email</label>
+      <span class="register-confirm__error">
+        This field must match the email
+      </span>
+      <input name="confirm" class="register-confirm__input" id="confirm" type="email">
+    </div>
+    <button type="submit" class="register__submit">Register</button>
+  </form>
+</body>
+</html>

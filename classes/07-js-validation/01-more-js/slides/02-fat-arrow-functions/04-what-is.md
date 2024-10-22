@@ -1,0 +1,11 @@
+# What is a Fat Arrow function in JS
+- Different way to declare a function
+- ALWAYS without a name
+- Avoids redeclaring `this`
+  - Outside this course
+  - But a big deal
+- Not required TO USE for this course
+  - Many examples will use
+  - In and out of this course
+  - Must be able to read at least
+- See `/readings/js/` for more on fat arrow

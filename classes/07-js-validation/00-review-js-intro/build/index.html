@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Prez</title>
+
+    <meta name="description" content="-- DESCRIPTION HERE --">
+    <meta name="author" content="swiftone">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="css/highlight/styles/zenburn.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <link rel="stylesheet" href="css/custom.css">
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides"><section id="chapter-overview" class="chapter">
+<section id="overview-issues" class="slide" data-has-notes="false">
+<h1>Common Issues with js-intro</h1><ul>
+<li>use strict/IIFE</li>
+<li>100vh</li>
+<li>Enter key</li>
+<li>style properties</li>
+<li>Where are you getting your instruction?<ul>
+<li>querySelectorAll</li>
+<li>getElementById etc</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-boilerplate" class="chapter">
+<section id="boilerplate-intro" class="slide" data-has-notes="false">
+<h1>Boilerplate</h1><ul>
+<li>Always start your file with <code>&quot;use strict&quot;;</code></li>
+<li>Have your code in an IIFE<ul>
+<li>ALL your code</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-styling" class="chapter">
+<section id="styling-mobile-vh" class="slide" data-has-notes="false">
+<h1>Using 100vh</h1><p>Many assignments using <code>min-height: 100vh;</code></p>
+<ul>
+<li>Not required, but fine</li>
+<li>BUT mobile can have issues with 100vh<ul>
+<li>I taught in same lesson I taught vh</li>
+</ul>
+</li>
+<li>TL;DR: Mobile browsers can have virtual controls<ul>
+<li>Cover part of the viewport</li>
+<li>Fixed by using 100dvh</li>
+<li>Not all browsers support dvh<pre><code class="lang-css"><span class="hljs-selector-tag">min-height</span>: 100<span class="hljs-selector-tag">vh</span>; <span class="hljs-comment">/* Fallback if no dvh */</span>
+<span class="hljs-selector-tag">min-height</span>: 100<span class="hljs-selector-tag">dvh</span>; <span class="hljs-comment">/* Overrides if understood */</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-events" class="chapter">
+<section id="events-enter-key" class="slide" data-has-notes="false">
+<h1>Click events already work for keyboard</h1><ul>
+<li>I tried to make this very explicit:<ul>
+<li>I received no questions</li>
+<li>You need to ask questions</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-md">That click to make the menu "drop down" should be doable with 
+keyboard navigation! (Tab to the menu option, Enter to click)
+<span class="hljs-bullet">- </span>Hints:
+<span class="hljs-bullet">    - </span>You do NOT need to add JS to handle the click - a 
+<span class="hljs-code">    semantic clickable element like a button and a 'click' </span>
+<span class="hljs-code">    event works just fine!</span>
+</code></pre>
+</section>
+</section>
+
+<section id="chapter-style" class="chapter">
+<section id="style-what-to-say" class="slide" data-has-notes="false">
+<h1>People set style properties</h1><p>I said <strong>three</strong> times AND called out:</p>
+<ul>
+<li>Do not set <code>style</code> attributes/properties</li>
+<li>Requirement said: </li>
+<li><strong>Don&#39;t use JS to set or change the style attribute</strong><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"display: none;"</span>&gt;</span>THIS IS BAD<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-js">someEl.style = <span class="hljs-string">"display: none;"</span>; <span class="hljs-comment">// SO IS THIS</span>
+</code></pre>
+</li>
+</ul>
+<p>Examples WILL do it!  It does &quot;work&quot;!</p>
+<ul>
+<li>But makes editing harder for humans!<ul>
+<li>Where is CSS? In the CSS and js files!</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-lessons" class="chapter">
+<section id="lessons-where" class="slide" data-has-notes="false">
+<h1>Where are you getting your code?</h1><ul>
+<li>Why am I talking to all of you?</li>
+<li>Why did I write all those readings?</li>
+</ul>
+<p>No point if you&#39;re just going to ignore the material and use ChatGPT/Google to fill in whatever</p>
+<p>Course should be more than a set of assignments</p>
+<ul>
+<li>I want to teach you from my experiences</li>
+<li>This <em>will</em> include differences from ChatGPT</li>
+</ul>
+</section>
+
+<section id="lessons-query-selector-all" class="slide" data-has-notes="false">
+<h1>querySelectorAll</h1><ul>
+<li>We&#39;ll cover this today<ul>
+<li>Like querySelector, but not just first</li>
+</ul>
+</li>
+<li>Multiple students used this<ul>
+<li>Even though assignment only need one match</li>
+</ul>
+</li>
+<li>Even saw:<pre><code class="lang-js"><span class="hljs-keyword">const</span> menuButtons = querySelectorAll(<span class="hljs-string">'.menu__option'</span>);
+<span class="hljs-keyword">const</span> menuButton = menuButtons[<span class="hljs-number">0</span>];
+</code></pre>
+</li>
+</ul>
+<p>Why?!</p>
+</section>
+
+<section id="lessons-get-element" class="slide" data-has-notes="false">
+<h1>getElementById()</h1><p>I taught that this existed but was limited</p>
+<ul>
+<li>That <code>querySelector</code> was familiar and more flexible</li>
+<li>Every example I used showed <code>querySelector</code></li>
+</ul>
+<p>So MANY students used <code>getElementById()</code> anyway</p>
+<ul>
+<li>Why?</li>
+</ul>
+</section>
+
+<section id="lessons-disheartening" class="slide" data-has-notes="false">
+<h1>Very disappointing and disheartening</h1><ul>
+<li>I put a lot of effort to try and guide you</li>
+<li>I try to make expectations and requirements clear</li>
+<li>I warn that ChatGPT will hurt you while you learn<ul>
+<li>Great if you can verify</li>
+<li>You&#39;re learning, you literally <strong>can&#39;t verify</strong></li>
+<li>It &quot;works&quot; isn&#39;t verifying</li>
+<li>It is EASIER<ul>
+<li>Because you&#39;re not having to learn</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>I feel like most/all of my effort is going to waste</p>
+<p>If anything is unclear, ASK QUESTIONS!</p>
+</section>
+</section></div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: Reveal.getQueryHash().transition || 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+        //{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+    </script>
+
+    <script src="js/dynamic-theme.js"></script><script src="js/custom.js"></script>
+
+  </body>
+</html>

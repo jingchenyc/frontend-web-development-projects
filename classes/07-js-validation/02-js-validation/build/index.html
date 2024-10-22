@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Prez</title>
+
+    <meta name="description" content="-- DESCRIPTION HERE --">
+    <meta name="author" content="swiftone">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="css/highlight/styles/zenburn.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <link rel="stylesheet" href="css/custom.css">
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides"><section id="chapter-form" class="chapter">
+<section id="form-options" class="slide" data-has-notes="false">
+<h1>Many Ways to Do Form Validation with JS</h1><ul>
+<li>I won&#39;t teach just 1 &quot;best&quot; way</li>
+<li>You often have to implement according to design<ul>
+<li>Designers will have different ideas and goals</li>
+</ul>
+</li>
+<li>I will show how to do different options<ul>
+<li>And offer pros/cons</li>
+</ul>
+</li>
+<li>A set of options for you + designer to pick from</li>
+</ul>
+</section>
+
+<section id="form-intro" class="slide" data-has-notes="false">
+<h1>Working with Forms with JS</h1><ul>
+<li>JS offers a lot of options base HTML/CSS does not</li>
+<li>Let&#39;s create an example form</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"register"</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"/register"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"POST"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"register__label"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"register__name-label"</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"register__name"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"register__label"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"register__email-label"</span>&gt;</span>Email<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"register__email"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"register__label"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"register__confirm-label"</span>&gt;</span>Confirm Email<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"confirm"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"register__confirm"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"register__submit"</span>&gt;</span>Register<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+</section>
+
+<section id="form-events" class="slide" data-has-notes="false">
+<h1>Events</h1><ul>
+<li>Validating Forms with JS</li>
+<li>Have code that reacts to <strong>events</strong></li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> nameEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.register__name'</span>);
+
+nameEl.addEventListener(<span class="hljs-string">'input'</span>, () =&gt; { <span class="hljs-comment">//fat arrow function</span>
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"typing happened"</span>);
+});
+</code></pre>
+</section>
+
+<section id="form-value" class="slide" data-has-notes="false">
+<h1>Value</h1><ul>
+<li>Event object is passed to callback</li>
+<li>Event object <code>.target</code> is DOM Node of field</li>
+<li><code>.value</code> property is current value of the field</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> nameEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.register__name'</span>);
+
+nameEl.addEventListener(<span class="hljs-string">'input'</span>, (event) =&gt; {
+ <span class="hljs-comment">// Can decide if value is okay as they type</span>
+ <span class="hljs-built_in">console</span>.log(event.target.value);
+});
+</code></pre>
+</section>
+</section>
+
+<section id="chapter-form-events" class="chapter">
+<section id="form-events-intro" class="slide" data-has-notes="false">
+<h1>Form Events</h1><ul>
+<li>There are MANY events</li>
+<li>Here are some common ones for forms<ul>
+<li><code>input</code> </li>
+<li><code>submit</code></li>
+<li><code>focus</code></li>
+<li><code>blur</code></li>
+<li><code>change</code></li>
+<li><code>keydown</code></li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="form-events-input" class="slide" data-has-notes="false">
+<h1><code>input</code> event</h1><ul>
+<li>Typing on a text/textarea</li>
+<li>Changed selection on <code>&lt;select&gt;</code></li>
+<li>Inconsistent on checkbox/radio<ul>
+<li>Use change event instead</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> nameEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.register__name'</span>);
+
+nameEl.addEventListener(<span class="hljs-string">'input'</span>, (event) =&gt; {
+ <span class="hljs-comment">// Can decide if value is okay as they type</span>
+ <span class="hljs-built_in">console</span>.log(event.target.value);
+});
+</code></pre>
+</section>
+
+<section id="form-events-submit" class="slide" data-has-notes="false">
+<h1><code>submit</code> event</h1><ul>
+<li>Fires on <code>&lt;form&gt;</code> when submitted<ul>
+<li>On <code>&lt;form&gt;</code> element, not on button!</li>
+<li>Even though submit likely from a button</li>
+</ul>
+</li>
+<li><code>event.preventDefault()</code> stops submit</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> formEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.register'</span>);
+formEl.addEventListener(<span class="hljs-string">'submit'</span>, (event) =&gt; { 
+  <span class="hljs-comment">// event.target is the form, not the fields</span>
+  <span class="hljs-keyword">const</span> isFormInvalid = <span class="hljs-literal">true</span>; <span class="hljs-comment">// Put code to decide here</span>
+  <span class="hljs-keyword">if</span>( isFormInvalid ) { 
+    <span class="hljs-comment">// Put code to tell user what to fix here</span>
+    event.preventDefault();
+  }
+});
+</code></pre>
+</section>
+
+<section id="form-events-invalid" class="slide" data-has-notes="false">
+<h1><code>invalid</code> event</h1><ul>
+<li>Like <code>submit</code>, triggers on submit<ul>
+<li>When HTML validation not passed</li>
+</ul>
+</li>
+<li>No <code>submit</code> in such case</li>
+</ul>
+</section>
+
+<section id="form-events-focus" class="slide" data-has-notes="false">
+<h1><code>focus</code> and <code>blur</code> events</h1><ul>
+<li>Fires when element gains/loses focus</li>
+<li>Does NOT propagate/&quot;bubble&quot;<ul>
+<li>This can complicate things later! (only a little)</li>
+</ul>
+</li>
+<li>Used to validate a field after user LEAVES the field<ul>
+<li>Good UX because only complains after done</li>
+<li>Poor UX because fixes require they go back</li>
+</ul>
+</li>
+<li>Can get <code>blur</code> AND <code>submit</code> if they click submit</li>
+</ul>
+</section>
+
+<section id="form-events-change" class="slide" data-has-notes="false">
+<h1><code>change</code> event</h1><ul>
+<li>Fires when a value changes<ul>
+<li>like <code>blur</code> on text</li>
+<li>on selection for select/radio/checkbox</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="form-events-keydown" class="slide" data-has-notes="false">
+<h1><code>keydown</code> event</h1><ul>
+<li>Fires on keypress</li>
+<li>BEFORE key is added to field</li>
+<li>Fires even if key is modifier (Shift, Ctrl, etc)</li>
+<li><code>event.preventDefault()</code> - key is not added to field</li>
+<li>Event object has info about the key pressed<ul>
+<li><code>.key</code> - which key is pressed</li>
+<li><code>.shiftKey</code>, <code>.altKey</code>, <code>.ctrlKey</code>, <code>.metaKey</code></li>
+<li><code>.isComposing</code> - translation inputs (Ex: Pinyin)</li>
+<li>Event object, not <code>event.target</code></li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="form-events-keydown-example" class="slide" data-has-notes="false">
+<h1><code>keydown</code> example</h1><pre><code class="lang-js"><span class="hljs-comment">// prevent "-" from being entered</span>
+
+inputEl.addEventListener(<span class="hljs-string">'keydown'</span>, (event) =&gt; { 
+  <span class="hljs-keyword">if</span>( event.key === <span class="hljs-string">"-"</span> ) { 
+    event.preventDefault();
+  }
+});
+</code></pre>
+<ul>
+<li>Cut and Paste/autofill can bypass</li>
+<li>Do not assume too much<ul>
+<li>Users enter data in many ways</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-showing-user" class="chapter">
+<section id="showing-user-intro" class="slide" data-has-notes="false">
+<h1>How to inform user of problems?</h1><ul>
+<li>Prevent submission</li>
+<li>Indicators</li>
+<li>Messages</li>
+</ul>
+</section>
+
+<section id="showing-user-prevent-submission" class="slide" data-has-notes="false">
+<h1>Preventing Submission</h1><ul>
+<li>Telling user and stopping submissions<ul>
+<li>Two different requirements</li>
+</ul>
+</li>
+<li>Stop submission on <code>submit</code> event<ul>
+<li>Disabling button may not stop submission!</li>
+<li>Enter on form field can submit!</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="showing-user-indicators" class="slide" data-has-notes="false">
+<h1>Visual Indicators Cannot be JUST color</h1><ul>
+<li>Ex: Put red border around invalid fields<ul>
+<li>Requires they see and distinguish red</li>
+<li>Not good for color-blind or vision-impaired</li>
+</ul>
+</li>
+<li>Indicators + Messaging better</li>
+<li>For indicator styling<ul>
+<li>Place class on field(s) and/or on form </li>
+<li>Have CSS that selects for field</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.invalid</span> {  <span class="hljs-comment">/* class on field */</span>
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red;
+}
+</code></pre>
+</section>
+
+<section id="showing-user-messaging" class="slide" data-has-notes="false">
+<h1>Messaging</h1><ul>
+<li>Text informing user of problem</li>
+<li>Can be at top of form</li>
+<li>Can change text of/change submit button</li>
+<li>Can be on each field</li>
+<li>UX is finding the way best for user<ul>
+<li>Not the easy way for developer</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-changing-text" class="chapter">
+<section id="changing-text-intro" class="slide" data-has-notes="false">
+<h1>Changing Text using JS (innerText)</h1><ul>
+<li>Pros:<ul>
+<li>Text updates dynamically</li>
+</ul>
+</li>
+<li>Cons: <ul>
+<li>Error text lives in JS </li>
+<li>Only plain text can change (not HTML)</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="changing-text-dynamic-innertext" class="slide" data-has-notes="false">
+<h1>Using <code>innerText</code> dynamically</h1><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button__add"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">const</span> buttonEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.button__add'</span>);
+<span class="hljs-keyword">const</span> demoEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.demo'</span>);
+buttonEl.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; { 
+  count += <span class="hljs-number">1</span>;
+  demoEl.innerText = count;
+});
+</code></pre>
+</section>
+
+<section id="changing-text-innertext" class="slide" data-has-notes="false">
+<h1><code>.innerText</code></h1><ul>
+<li>Change the text content of a DOM Node</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"demo"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> demoEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.demo'</span>);
+
+demoEl.innerText = <span class="hljs-string">"Hello World"</span>;
+</code></pre>
+<ul>
+<li>Set to empty string to remove</li>
+</ul>
+<pre><code class="lang-js">demoEl.innerText = <span class="hljs-string">""</span>;
+</code></pre>
+</section>
+
+<section id="changing-text-styling" class="slide" data-has-notes="false">
+<h1>Styling elements that use innerText</h1><ul>
+<li>Often you want errors to have styling<ul>
+<li>borders, padding, etc</li>
+</ul>
+</li>
+<li>Don&#39;t want this visible when text is empty</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.demo</span> { 
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1rem</span>;  
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#FF000033</span>; <span class="hljs-comment">/* red w/transparency */</span>
+}
+
+<span class="hljs-selector-class">.demo</span><span class="hljs-selector-pseudo">:empty</span> {  <span class="hljs-comment">/* Only applies when element is empty */</span>
+  <span class="hljs-attribute">display</span>: none;
+}
+</code></pre>
+</section>
+
+<section id="changing-text-innerhtml" class="slide" data-has-notes="false">
+<h1><code>.innerHTML</code> allows more than text</h1><pre><code class="lang-js"><span class="hljs-keyword">const</span> demoEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.demo'</span>);
+
+demoEl.innerHTML = <span class="hljs-string">`&lt;p&gt;This is &lt;b&gt;Awesome!&lt;/b&gt;&lt;/p&gt;`</span>;
+</code></pre>
+<ul>
+<li>As with <code>innerText</code>, set to &quot;&quot; to remove</li>
+<li>An element with child elements is not <code>:empty</code><ul>
+<li>Even if those elements have no text</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="changing-text-changing-html" class="slide" data-has-notes="false">
+<h1>Changing HTML using JS (innerHTML)</h1><ul>
+<li>Pros:<ul>
+<li>Allows more complex messaging</li>
+</ul>
+</li>
+<li>Cons:<ul>
+<li>Puts HTML in JS<ul>
+<li>Harder to edit/maintain</li>
+</ul>
+</li>
+<li>Security issues if data isn&#39;t sanitized</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-summary" class="chapter">
+<section id="summary-overview" class="slide" data-has-notes="false">
+<h1>Summary - Forms with JS</h1><ul>
+<li>Events allow you to react at different times</li>
+<li>Can examine content of fields</li>
+<li>Can prevent submission</li>
+<li>Can change CSS to change styling</li>
+<li>Can display messages to the user</li>
+</ul>
+<p>Powerful, but requires effort</p>
+<ul>
+<li>Detailed work</li>
+<li>Needed skills to distinguish yourself!</li>
+</ul>
+</section>
+
+<section id="summary-events" class="slide" data-has-notes="false">
+<h1>Summary - Common Form Events</h1><ul>
+<li><code>input</code> - Check as typed</li>
+<li><code>keydown</code> - Edit WHILE typing</li>
+<li><code>focus</code>/<code>blur</code> - Check after leaving</li>
+<li><code>change</code> - Check after change complete</li>
+<li><code>submit</code> - form event, check before submit<ul>
+<li>Should always be checked on submit</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="summary-showing" class="slide" data-has-notes="false">
+<h1>Summary - Showing User Results</h1><ul>
+<li>Add/Remove text using <code>.innerText</code><ul>
+<li>Pro: Secure</li>
+<li>Con: Text in JS</li>
+</ul>
+</li>
+<li>Add/Remove HTML using <code>.innerHTML</code><ul>
+<li>Pro: Most Control</li>
+<li>Cons: HTML in JS, security risk if user data<ul>
+<li>Never use user supplied data!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section></div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: Reveal.getQueryHash().transition || 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+        //{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+    </script>
+
+    <script src="js/dynamic-theme.js"></script><script src="js/custom.js"></script>
+
+  </body>
+</html>
