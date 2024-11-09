@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Famous Cats - Cat Lovers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Skiplink -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="header-content">
+        <a href="/" class="logo-link">
+            <img src="images/logo.jpg" alt="" class="logo">
+        </a>
+        <h1>Famous Cats</h1>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <button class="nav-toggle" aria-label="Open navigation menu" aria-controls="nav-menu" aria-expanded="false">
+            <!-- Hamburger icon -->
+            &#9776;
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="cats.html">Famous Cats</a></li>
+            <li><a href="events.html">Cat Events</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main id="main-content">
+    <section class="cat-cards">
+        <article class="cat-card">
+            <h2>Grumpy Cat</h2>
+            <img src="images/GrumpyCat.jpg" alt="Grumpy Cat" class="cat-image">
+            <p>The famous grumpy-faced cat that became an internet sensation. Grumpy Cat's unique expressions made her one of the most beloved memes online.</p>
+            <p>Grumpy Cat's legacy continues to bring smiles to millions of people around <button class="subscribe-button">Subscribe</button> the world.</p>
+        </article>
+        <article class="cat-card">
+            <h2>Lil Bub</h2>
+            <img src="images/LilBub.jpg" alt="Lil Bub" class="cat-image">
+            <p>A unique cat known for her cute appearance and tiny size. Lil Bub captured the hearts of many with her sweet personality.</p>
+            <p>Her adorable looks and inspiring story made her an <button class="subscribe-button">Subscribe</button> internet superstar.</p>
+        </article>
+        <article class="cat-card">
+            <h2>Jorts</h2>
+            <img src="images/Jorts.jpg" alt="Jorts" class="cat-image">
+            <p>A friendly orange cat that became famous on social media. Jorts is well-loved for his playful and curious nature.</p>
+            <p>His charming antics and friendly personality have made him an <button class="subscribe-button">Subscribe</button> internet favorite.</p>
+        </article>
+        <article class="cat-card">
+            <h2>Jean</h2>
+            <img src="images/Jean.jpg" alt="Jean" class="cat-image">
+            <p>Jean is often seen hanging out with Jorts and shares his adventures. Jean adds a unique charm to Jorts' escapades.</p>
+            <p>Together, they make a fantastic duo that <button class="subscribe-button">Subscribe</button> captivates audiences.</p>
+        </article>
+        <article class="cat-card">
+            <h2>Maru</h2>
+            <img src="images/Maru.jpg" alt="Maru" class="cat-image">
+            <p>Maru is known for his love of boxes and playful nature. His curiosity about simple things brings joy to viewers.</p>
+            <p>Maru's box adventures are a delight to watch, and he remains a beloved <button class="subscribe-button">Subscribe</button> internet figure.</p>
+        </article>
+        <article class="cat-card">
+            <h2>Nyancat</h2>
+            <img src="images/Nyancat.jpg" alt="Nyancat" class="cat-image">
+            <p>Nyancat is an iconic internet cat, featuring a Pop-Tart body flying through space. The colorful trails and catchy tune made it unforgettable.</p>
+            <p>Nyancat's enduring popularity makes it one of the most recognized <button class="subscribe-button">Subscribe</button> internet phenomena. </p>
+        </article>
+    </section>
+</main>
+
+
+<!-- Footer -->
+<footer class="site-footer">
+    <nav class="footer-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="cats.html">Famous Cats</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <p>&copy; 2023 Cat Lovers</p>
+</footer>
+
+<!-- Modal -->
+<dialog id="subscribe-modal">
+    <form method="post" action="/subscribe">
+        <h2>Subscribe to Cat Updates</h2>
+        <p>
+            <label for="email">Email Address <span class="required">* required</span></label>
+            <input type="text" id="email" name="email">
+            <span class="error-message" id="email-error"></span>
+        </p>
+        <p>
+            <label for="confirm-email">Confirm Email <span class="required">* required</span></label>
+            <input type="text" id="confirm-email" name="confirm-email">
+            <span class="error-message" id="confirm-email-error"></span>
+        </p>
+        <p class="form-actions">
+            <button type="submit" id="subcribe-button">Subscribe</button>
+            <button type="button" id="cancel-button">Cancel</button>
+        </p>
+    </form>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>

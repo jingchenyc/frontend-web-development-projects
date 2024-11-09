@@ -1,0 +1,435 @@
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    background-color: papayawhip;
+    color: #000;
+}
+
+/* Skiplink */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: -999px;
+}
+
+.skip-link:focus {
+    left: 0;
+    top: 0;
+    background: lime;
+    padding: 0.5rem;
+    z-index: 100;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    flex-direction: column;
+    background-color: burlywood;
+
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-link {
+    display: inline-block;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 1rem;
+}
+
+h1 {
+    align-self: center;
+    width: 100%;
+    text-align: center;
+}
+
+/* Navigation */
+.main-nav {
+    background-color: burlywood;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+}
+
+.nav-menu {
+    list-style: none;
+    display: inline-flex;
+    gap: 2rem;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: underline;
+    color: blue;
+}
+
+.nav-menu a:focus,
+.nav-menu a:hover {
+    text-decoration: underline;
+    background-color: dodgerblue;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+main {
+    flex: 1;
+}
+
+/* Panels */
+.panels {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.panel {
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    padding: 0.5rem;
+    border: 1px solid black;
+    grid-column: span 12;
+}
+
+
+.panel-right-image {
+    flex-direction: row-reverse;
+}
+
+.panel-left-image {
+    flex-direction: row;
+}
+
+.panel-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 0.5rem 0.5rem 0;
+}
+
+.panel h2 {
+    text-align: center;
+}
+
+.panel p {
+    text-align: left;
+    margin: 10px 0;
+}
+
+/* Cat Cards */
+.cat-cards {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.cat-card {
+    background-color: #eee;
+    padding: 0.5rem;
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
+
+.cat-card p {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.cat-image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 0.5rem;
+}
+
+.subscribe-button {
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+
+/* Footer */
+.site-footer {
+    background-color: burlywood;
+    padding: 0.5rem;
+}
+
+.site-footer p {
+    text-align: center;
+    margin: 0.5rem;
+    font-size: 0.8rem;
+    color: #eee;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.footer-nav a {
+    text-decoration: underline;
+    color: blue;
+}
+
+.footer-nav a:focus,
+.footer-nav a:hover {
+    text-decoration: underline;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 0.25rem;
+}
+
+/* Responsive and Adaptive Styles */
+@media (max-width: 44rem) {
+    .site-header {
+        display: flex;
+        flex-direction: row;
+    }
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        background-color: burlywood;
+        padding: 1rem;
+    }
+
+    .nav-menu.nav-menu-visible {
+        display: flex;
+    }
+
+    .panels {
+        padding: 0;
+        gap: 0;
+    }
+
+    .panel {
+        display: block;
+        padding: 0.5rem;
+        margin: 0;
+    }
+
+    .panel:last-child {
+        border-top: none;
+    }
+
+    .panel-image {
+        width: 125px;
+        height: 125px;
+    }
+
+    .panel-right-image .panel-image {
+        float: right;
+        margin: 0 0 0.5rem 0.5rem;
+    }
+
+    .panel-left-image .panel-image {
+        float: left;
+        margin: 0 0.5rem 0.5rem 0;
+    }
+
+    .cat-cards {
+        display: block;
+        padding: 0.5rem;
+    }
+
+    .cat-card {
+        margin-bottom: 1rem;
+        grid-column: span 12;
+    }
+
+    .footer-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Modal */
+dialog {
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#subscribe-modal {
+    width: 80%;
+    max-width: 30rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    gap: 1rem;
+}
+
+#subscribe-modal h2 {
+    margin-bottom: 1rem;
+}
+
+#subscribe-modal p {
+    margin-bottom: 0.5rem;
+}
+
+#subscribe-modal label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+#subscribe-modal input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.required {
+    color: red;
+    font-style: italic;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.form-actions button {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#subcribe-button {
+    background-color: lime;
+}
+
+#cancel-button {
+    background-color: lightcoral;
+}
+
+.form-actions button:hover,
+.form-actions button:focus {
+    background-color: #eee;
+}
+
+/* Accessibility focus styles */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid dodgerblue;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes modal-fade-in {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+    dialog[open] {
+        animation: modal-fade-in 0.3s ease-out;
+    }
+
+    .cat-card {
+        transition: transform 0.3s ease-out;
+    }
+    .cat-card:hover {
+        transform: scale(1.05);
+    }
+
+    .panel-image {
+        transition: transform 0.3s ease-out;
+    }
+    .panel-image:hover {
+        transform: rotate(5deg);
+    }
+
+    .nav-menu a {
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, padding 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+    }
+
+    .subscribe-button {
+        transition: color 0.2s ease-in-out;
+    }
+    .subscribe-button:hover,
+    .subscribe-button:focus {
+        color: darkblue;
+    }
+
+    .footer-nav a {
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+    }
+
+    .form-actions button {
+        transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .form-actions button:hover,
+    .form-actions button:focus {
+        background-color: #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
