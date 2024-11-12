@@ -1,0 +1,18 @@
+.app {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 1.2em;
+  color: #213547;
+}
+
+/* Styling for inventory count and buttons */
+.inventory-count {
+  margin-right: 1rem;
+}
+
+/* Button spacing for +/- buttons */
+button {
+  margin: 0 5px;
+}
