@@ -1,0 +1,9 @@
+All images from Unsplash (Free License): 
+- tutor1.jpg: https://unsplash.com/photos/woman-in-blue-tank-top-standing-beside-white-wall-TXxiFuQLBKQ
+- tutor2.jpg: https://unsplash.com/photos/woman-wearing-black-mortar-board-EWN0rrwbBIQ
+- tutor3.jpg: https://unsplash.com/photos/woman-in-pink-dress-sitting-on-wooden-pathway-0N9hBusgVYU
+- tutor4.jpg: https://unsplash.com/photos/woman-walking-down-the-hill-at-daytime-7MrXw_o7Eo4
+License: https://unsplash.com/license
+
+Logo image (logo.png) is created by me (the author of this code).
+theme-icon-dark.svg from Google Icons (Material Icons) under Apache License 2.0

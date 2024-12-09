@@ -1,0 +1,24 @@
+.tutors-page {
+  padding:1rem;
+}
+
+.tutors-filter-form {
+  display:flex;
+  flex-wrap: wrap;
+  gap:1rem;
+  margin-bottom:1rem;
+  align-items: center;
+}
+.tutors-filter-form label {
+  font-weight:bold;
+}
+.tutors-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
+@media (max-width:600px) {
+  .tutors-grid {
+    grid-template-columns:1fr;
+  }
+}

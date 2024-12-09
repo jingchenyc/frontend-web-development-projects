@@ -1,0 +1,34 @@
+.booking-form-page,
+.profile-page {
+  padding:1rem;
+}
+
+.form-field {
+  display:flex;
+  flex-direction:column;
+  margin-bottom:1rem;
+}
+
+.form-field label {
+  margin-bottom:0.5rem;
+}
+
+.error-msg {
+  color: var(--error-color);
+  font-weight:bold;
+}
+
+.submit-button,
+.edit-profile-button {
+  background: var(--accent-color);
+  color:#fff;
+  border:none;
+  padding:0.5rem 1rem;
+  cursor:pointer;
+  font-size:1rem;
+  border-radius:0.25rem;
+}
+.submit-button:hover,
+.edit-profile-button:hover {
+  opacity:0.8;
+}

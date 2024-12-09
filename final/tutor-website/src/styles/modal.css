@@ -1,0 +1,43 @@
+dialog {
+    border:none;
+    border-radius:0.5rem;
+    padding:1rem;
+    background:#fff;
+    max-width: 300px;
+  }
+  
+  .modal-form {
+    display:flex;
+    flex-direction:column;
+  }
+  
+  .modal-form label {
+    margin-top:1rem;
+    margin-bottom:0.5rem;
+  }
+  
+  .modal-buttons {
+    display:flex;
+    justify-content:flex-end;
+    gap:1rem;
+    margin-top:1rem;
+  }
+  
+  .save-button, .cancel-button {
+    background: var(--accent-color);
+    color:#fff;
+    border:none;
+    padding:0.5rem 1rem;
+    cursor:pointer;
+    font-size:1rem;
+    border-radius:0.25rem;
+  }
+  
+  .cancel-button {
+    background:#666;
+  }
+  
+  dialog::backdrop {
+    background:rgba(0,0,0,0.5);
+  }
+  

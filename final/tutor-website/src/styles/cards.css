@@ -1,0 +1,28 @@
+.tutor-card {
+  border:1px solid #ccc;
+  border-radius:0.5rem;
+  overflow:hidden;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+}
+
+.tutor-card-image {
+  width:100%;
+  display:block;
+}
+
+.tutor-card-content {
+  padding:1rem;
+}
+
+.tutor-card-name {
+  margin-top:0;
+  margin-bottom:0.5rem;
+  font-size:1.125rem;
+}
+
+.tutor-card-language,
+.tutor-card-rate {
+  margin:0.25rem 0;
+}

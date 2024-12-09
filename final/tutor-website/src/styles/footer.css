@@ -1,0 +1,12 @@
+.site-footer {
+    background-color: var(--footer-bg);
+    padding:1rem;
+    text-align:center;
+    font-size:0.875rem;
+  }
+  .site-footer a {
+    margin:0 0.5rem;
+    color:var(--accent-color);
+    text-decoration:underline;
+  }
+  
