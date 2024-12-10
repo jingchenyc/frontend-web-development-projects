@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import '../styles/accordion.css'
 
-// 簡單的 Accordion
 function Accordion({title, children}) {
   const [open, setOpen] = useState(false)
   return (

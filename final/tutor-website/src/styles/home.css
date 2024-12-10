@@ -1,8 +1,118 @@
-.home-page {
-    padding:1rem;
+.hero-section {
+  background-color: var(--bg-color);
+  padding: 4rem;
+  color: var(--text-color);
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.hero-text-block {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.highlight-background {
+  display: inline-block;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  margin: 0.25em 0;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+  background-color: #333;
+}
+
+.hero-image-block {
+  position: relative;
+  flex: 1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-image {
+  width: 300px;
+  border-radius: 0.5rem;
+  position: relative;
+  z-index:3;
+}
+
+/* 模擬多張圖片重疊的效果 */
+.duplicate-image-1,
+.duplicate-image-2 {
+  position:absolute;
+  top:0;
+  border-radius:0.5rem;
+  z-index:2;
+}
+
+.duplicate-image-1 {
+  transform: translateX(40px) scale(0.9);;
+  z-index:2;
+}
+
+.duplicate-image-2 {
+  transform: translateX(80px) scale(0.8);
+  z-index:1;
+}
+
+/* Responsive and Adaptive Styles */
+@media(max-width: 50rem) {
+  .hero-inner {
+    flex-direction: column;
+    text-align:center;
   }
-  .home-hero-image {
-    margin:1rem 0;
-    border-radius:0.5rem;
+
+  .cta-button {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 0.75rem 4rem;
+    margin: 0.25em 0;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
   }
-  
+
+  .hero-text-block, .hero-image-block {
+    flex:none;
+    max-width:100%;
+    margin-bottom:2rem;
+  }
+
+  .hero-image {
+    width:200px;
+  }
+
+  .duplicate-image-1,
+  .duplicate-image-2
+  {
+    transform: translateX(20px) scale(0.9);
+  }
+
+}

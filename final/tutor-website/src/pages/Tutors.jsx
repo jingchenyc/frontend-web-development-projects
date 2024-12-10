@@ -6,7 +6,6 @@ import tutor2 from '../assets/tutors/tutor2.jpg';
 import tutor3 from '../assets/tutors/tutor3.jpg';
 import tutor4 from '../assets/tutors/tutor4.jpg';   
 
-// 假資料
 const tutorsData = [
   {name: 'Alice Lee', language: 'Chinese', rate: 20, image: tutor1},
   {name: 'Carlos Garcia', language: 'Spanish', rate: 18, image: tutor2},

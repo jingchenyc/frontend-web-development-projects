@@ -2,15 +2,34 @@ import React from 'react'
 import '../styles/home.css'
 import tutor1 from '../assets/tutors/tutor1.jpg';
 
-function Home() {
-  return (
-    <section className="home-page">
-      <h2>Welcome to Language Tutors</h2>
-      <p>Find the perfect tutor to help you master a new language. Personalized lessons, flexible scheduling, and a global community of learners await you.</p>
-      <img src={tutor1} alt="A tutor teaching online" className="home-hero-image"/>
-      <p>Browse our curated list of professional tutors and start your language journey today!</p>
-    </section>
-  )
-}
-
-export default Home
+function Home({ navigate }) {
+    return (
+      <section className="hero-section">
+        <div className="hero-inner">
+          <div className="hero-text-block">
+            <h1 className="hero-title">
+              <span className="highlight-background">Learn faster with your best language tutor.</span>
+            </h1>
+            <a 
+              href="#tutors" 
+              className="cta-button" 
+              onClick={(e) => { 
+                e.preventDefault(); 
+                navigate('tutors'); 
+              }}
+            >
+              Get started →
+            </a>
+            
+          </div>
+          <div className="hero-image-block">
+            <img src={tutor1} alt="A tutor teaching online" className="hero-image"/>
+            <img src={tutor1} alt="" aria-hidden="true" className="hero-image duplicate-image-1"/>
+            <img src={tutor1} alt="" aria-hidden="true" className="hero-image duplicate-image-2"/>
+          </div>
+        </div>
+      </section>
+    )
+  }
+  
+  export default Home

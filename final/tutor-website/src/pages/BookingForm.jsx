@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import '../styles/forms.css'
 
-// 這裡將實作一個有基本驗證的表單
-// 同時加入複雜表單互動: 選擇 "Other Language" 時出現額外輸入欄位
 
 function BookingForm() {
   const [name, setName] = useState('')

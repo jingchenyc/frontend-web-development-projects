@@ -14,6 +14,20 @@ html {
     background-color: var(--bg-color);
     color: var(--text-color);
   }
+
+  #root {
+    width: 100%;
+  }
+
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .app-container main {
+    flex: 1;
+  }
   
   img {
     max-width: 100%;

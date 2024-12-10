@@ -1,56 +1,99 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import '../styles/nav.css'
 
-function Nav({currentPage, navigate}) {
+function Nav({ currentPage, navigate }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
   }
 
-  // 簡易 dropdown/hamburger menu
-  // 大螢幕: 顯示水平導航列
-  // 小螢幕: 顯示漢堡選單按鈕，點擊後展開連結列表
+  const closeMenu = () => {
+    setMenuOpen(false)
+  }
+
   return (
     <nav className="primary-nav">
-      <button 
-        className="nav-toggle" 
-        aria-expanded={menuOpen} 
+      <button
+        className="nav-toggle"
+        aria-expanded={menuOpen}
         aria-controls="nav-menu"
         onClick={toggleMenu}
       >
-        <span className="nav-toggle-label">Menu</span>
+        ☰
       </button>
       <ul id="nav-menu" className={`nav-menu ${menuOpen ? 'open' : ''}`}>
+        <button
+          className="close-button"
+          aria-label="Close Menu"
+          onClick={closeMenu}
+        >
+          ×
+        </button>
         <li>
-          <button 
-            className={`nav-link ${currentPage==='home'?'active':''}`} 
-            onClick={()=>{navigate('home');setMenuOpen(false)}}
-          >Home</button>
+          <a
+            href="#home"
+            className={`nav-link ${currentPage === 'home' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault()
+              navigate('home')
+              closeMenu()
+            }}
+          >
+            Home
+          </a>
         </li>
         <li>
-          <button 
-            className={`nav-link ${currentPage==='tutors'?'active':''}`} 
-            onClick={()=>{navigate('tutors');setMenuOpen(false)}}
-          >Find Tutors</button>
+          <a
+            href="#tutors"
+            className={`nav-link ${currentPage === 'tutors' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault()
+              navigate('tutors')
+              closeMenu()
+            }}
+          >
+            Find Tutors
+          </a>
         </li>
         <li>
-          <button 
-            className={`nav-link ${currentPage==='about'?'active':''}`} 
-            onClick={()=>{navigate('about');setMenuOpen(false)}}
-          >About</button>
+          <a
+            href="#about"
+            className={`nav-link ${currentPage === 'about' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault()
+              navigate('about')
+              closeMenu()
+            }}
+          >
+            About
+          </a>
         </li>
         <li>
-          <button 
-            className={`nav-link ${currentPage==='booking'?'active':''}`} 
-            onClick={()=>{navigate('booking');setMenuOpen(false)}}
-          >Book a Lesson</button>
+          <a
+            href="#booking"
+            className={`nav-link ${currentPage === 'booking' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault()
+              navigate('booking')
+              closeMenu()
+            }}
+          >
+            Book a Lesson
+          </a>
         </li>
         <li>
-          <button 
-            className={`nav-link ${currentPage==='profile'?'active':''}`} 
-            onClick={()=>{navigate('profile');setMenuOpen(false)}}
-          >Profile</button>
+          <a
+            href="#profile"
+            className={`nav-link ${currentPage === 'profile' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault()
+              navigate('profile')
+              closeMenu()
+            }}
+          >
+            Profile
+          </a>
         </li>
       </ul>
     </nav>
