@@ -112,7 +112,13 @@ Through these projects and assignments, I learned:
    - For HTML/CSS/JS projects: Open `index.html` in your browser.
    - For React projects:
      - Install dependencies: `npm install`.
-     - Start the development server: `npm run dev`.
+     - work:
+       - Start the development server: `npm run dev` or `node server.js`.
+     - project1 and project2:
+       - Start the development server: `npm run dev` or `node server.js`.
+     - final project:
+       - `npm run build`
+       - `npx serve -s dist`
 
 ---
 
