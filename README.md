@@ -113,9 +113,9 @@ Through these projects and assignments, I learned:
    - For React projects:
      - Install dependencies: `npm install`.
      - work:
-       - Start the development server: `npm run dev` or `node server.js`.
+       - Start the development server: `npm run dev`.
      - project1 and project2:
-       - Start the development server: `npm run dev` or `node server.js`.
+       - Start the development server: `node server.js`.
      - final project:
        - `npm run build`
        - `npx serve -s dist`
