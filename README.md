@@ -1,7 +1,3 @@
-Here's the updated README with a section added for the `work` folder:
-
----
-
 # Frontend Web Development Projects
 
 Welcome to the **Frontend Web Development Projects** repository! This repository contains a collection of projects and assignments I completed as part of my **INFO 6150 - Web UI/UX Engineering** course at Northeastern University. These projects and assignments demonstrate my understanding and implementation of frontend web development concepts, including HTML, CSS, JavaScript, and React.
