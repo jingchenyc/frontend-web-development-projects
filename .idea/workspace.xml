@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2d964ac2-9132-4999-93f1-e9fc48105fda" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2mUp072OI5fUgjceSSiBJkmMczc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.homepage.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.codeium.enabled": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "react-components",
+    "kotlin-language-version-configured": "true",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "show.migrate.to.gradle.popup": "false",
+    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project2/public/images" />
+      <recent name="$PROJECT_DIR$/project2/public" />
+      <recent name="$PROJECT_DIR$/work/07-js-form/public/images" />
+      <recent name="$PROJECT_DIR$/project1/public" />
+      <recent name="$PROJECT_DIR$/work/03-responsive-grid" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2d964ac2-9132-4999-93f1-e9fc48105fda" name="Changes" comment="" />
+      <created>1727140783006</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727140783006</updated>
+      <workItem from="1727140784276" duration="10113000" />
+      <workItem from="1727194428036" duration="598000" />
+      <workItem from="1727754691094" duration="10370000" />
+      <workItem from="1727791977585" duration="3745000" />
+      <workItem from="1728358263252" duration="7127000" />
+      <workItem from="1728400983208" duration="3012000" />
+      <workItem from="1728541893608" duration="1725000" />
+      <workItem from="1728665928965" duration="3082000" />
+      <workItem from="1728841477306" duration="598000" />
+      <workItem from="1728878181691" duration="6708000" />
+      <workItem from="1728925212413" duration="14644000" />
+      <workItem from="1729011135236" duration="9792000" />
+      <workItem from="1729558783465" duration="6336000" />
+      <workItem from="1729574691122" duration="1304000" />
+      <workItem from="1729621774874" duration="1127000" />
+      <workItem from="1729744844433" duration="2287000" />
+      <workItem from="1729778669369" duration="5254000" />
+      <workItem from="1729863467340" duration="539000" />
+      <workItem from="1730152235985" duration="9059000" />
+      <workItem from="1730220423169" duration="598000" />
+      <workItem from="1730285849325" duration="592000" />
+      <workItem from="1730331195032" duration="526000" />
+      <workItem from="1730391679244" duration="376000" />
+      <workItem from="1730481397082" duration="20416000" />
+      <workItem from="1730573546916" duration="10626000" />
+      <workItem from="1731371051155" duration="2881000" />
+      <workItem from="1731377276885" duration="9083000" />
+      <workItem from="1731394999241" duration="609000" />
+      <workItem from="1731442523666" duration="7000" />
+      <workItem from="1731980691916" duration="8309000" />
+      <workItem from="1732042158779" duration="985000" />
+      <workItem from="1732215153405" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -65,7 +65,7 @@ Each project in this repository highlights a specific area of web development, p
 
 ### Final Project: React
 
-**Demo Links**: [Final (React + Vite)](https://jingchenyc.github.io/frontend-web-development-projects/final/tutor-website/public/)
+**Demo Links**: [Final (React + Vite)](https://jingchenyc.github.io/frontend-web-development-projects/final/tutor-website/dist/)
 
 **Description**: The final project showcases a React-based Single Page Application (SPA) that demonstrates my understanding of React components, state, props, and hooks.
 
