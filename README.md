@@ -35,9 +35,7 @@ Each project in this repository highlights a specific area of web development, p
 
 ### Project 1: HTML and CSS
 
-**Demo Links**:
-
-- [Project1](https://jingchenyc.github.io/frontend-web-development-projects/project1/public/)
+**Demo Links**: [Project1](https://jingchenyc.github.io/frontend-web-development-projects/project1/public/)
 
 **Description**: This project focused on building a responsive and accessible static website using HTML and CSS. The website includes semantic HTML elements, CSS Flexbox, and Grid layouts.
 
@@ -52,9 +50,7 @@ Each project in this repository highlights a specific area of web development, p
 
 ### Project 2: JavaScript
 
-**Demo Links**:
-
-- [Project2](https://jingchenyc.github.io/frontend-web-development-projects/project2/public/)
+**Demo Links**: [Project2](https://jingchenyc.github.io/frontend-web-development-projects/project2/public/)
 
 **Description**: This project added interactivity to web pages using JavaScript. Key functionalities include form validation, interactive UI components, and user input handling.
 
@@ -69,9 +65,7 @@ Each project in this repository highlights a specific area of web development, p
 
 ### Final Project: React
 
-**Demo Links**:
-
-- [Final (React + Vite)](https://jingchenyc.github.io/frontend-web-development-projects/final/tutor-website/public/)
+**Demo Links**: [Final (React + Vite)](https://jingchenyc.github.io/frontend-web-development-projects/final/tutor-website/public/)
 
 **Description**: The final project showcases a React-based Single Page Application (SPA) that demonstrates my understanding of React components, state, props, and hooks.
 
