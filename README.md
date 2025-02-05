@@ -67,7 +67,7 @@ Each project in this repository highlights a specific area of web development, p
 
 **Demo Links**: [Final (React + Vite)](https://jingchenyc.github.io/frontend-web-development-projects/final/tutor-website/dist/)
 
-**Description**: The final project showcases a React-based Single Page Application (SPA) that demonstrates my understanding of React components, state, props, and hooks.
+**Description**: The final project showcases a React-based Application that demonstrates my understanding of React components, state, props, and hooks.
 
 - **Key Features**:
   - Built using React with Vite for a modern development setup.
